@@ -37,7 +37,6 @@ Library code goes into [src/](src/), main program code in [app/](app).
 ## Software Requirements
 
 - CMake 3.16+
-- GNU Makefile
 - MSVC 2017 (or higher), G++9 (or higher), Clang++9 (or higher)
 
 ## Building
@@ -45,7 +44,7 @@ Library code goes into [src/](src/), main program code in [app/](app).
 First, clone this repo and do the preliminary work:
 
 ```shell
-git clone --recursive https://github.com/franneck94/CppProjectTemplate
+git clone --recursive https://github.com/franneck94/ImGuiProjectTemplate.git
 make prepare
 ```
 
