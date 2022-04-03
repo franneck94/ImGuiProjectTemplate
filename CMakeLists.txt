@@ -20,7 +20,6 @@ option(ENABLE_CCACHE        "Enable to add Ccache."                 OFF)
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 include(ConfigSafeGuards)
 include(Warnings)
-include(AddGitSubmodule)
 include(FetchContent)
 
 include(StaticAnalyzers)
@@ -33,9 +32,12 @@ endif()
 
 ### EXTERNAL LIBRARIES
 
-add_git_submodule(external/glfw)
-add_git_submodule(external/glad)
-add_git_submodule(external/json)
+FetchContent_Declare(
+    nlohmann_json
+    GIT_REPOSITORY https://github.com/nlohmann/json.git
+    GIT_TAG v3.10.5
+    GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(nlohmann_json)
 
 FetchContent_Declare(
     cxxopts

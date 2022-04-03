@@ -5,10 +5,13 @@
 
 This is a template for Imgui C++ projects. What you get:
 
-- Library, executable and test code separated in distinct folders.
+- Library and executable code separated in distinct folders.
 - Use of modern CMake for building and compiling.
-- External libraries fetched by CMake or cloned by Git.
-- General purpose libraries: [JSON](https://github.com/nlohmann/json), [spdlog](https://github.com/gabime/spdlog), [cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt).
+- External libraries:
+  - All graphical and imgui related libs via Git submodules:
+    - GLFW, Imgui and Implot
+  - General purpose libraries via CMake FetchContent:
+    - [JSON](https://github.com/nlohmann/json), [spdlog](https://github.com/gabime/spdlog) ,[cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt)
 
 ## Structure
 

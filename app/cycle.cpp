@@ -33,11 +33,7 @@ void cycle_function(GLFWwindow *const window)
     {
         start_cycle();
 
-        ImGui::NewFrame();
-
-        ImGui::Button("TestButton");
-
-        ImGui::Render();
+        render();
 
         end_cycle(window);
     }
