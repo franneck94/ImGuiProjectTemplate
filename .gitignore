@@ -5,8 +5,11 @@
 build/
 .vscode/
 html/
-latex/
 external/json/
+external/imgui/
+external/implot/
+external/glad/
+external/glfw/
 
 ################################
 ############ C/C++ #############
