@@ -39,6 +39,10 @@ endif()
 ### EXTERNAL LIBRARIES
 
 add_git_submodule(external/json)
+add_git_submodule(external/glfw)
+add_git_submodule(external/glad)
+add_git_submodule(external/imgui)
+add_git_submodule(external/implot)
 
 FetchContent_Declare(
     fmt
