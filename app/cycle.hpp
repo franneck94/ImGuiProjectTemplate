@@ -7,7 +7,7 @@
 #endif
 #include <GLFW/glfw3.h>
 
-#include "Render.hpp"
+#include "render.hpp"
 
 void start_cycle();
 
