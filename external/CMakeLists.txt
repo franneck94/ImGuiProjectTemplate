@@ -24,11 +24,11 @@ target_link_libraries(implot PUBLIC imgui)
 target_set_warnings(TARGET implot ENABLE OFF AS_ERROR OFF)
 
 add_library(impl
-    "impl/imgui_impl_glfw.h"
-    "impl/imgui_impl_glfw.cpp"
-    "impl/imgui_impl_opengl3.h"
-    "impl/imgui_impl_opengl3.cpp")
-target_include_directories(impl PUBLIC "impl")
+    "imgui/backends/imgui_impl_glfw.h"
+    "imgui/backends/imgui_impl_glfw.cpp"
+    "imgui/backends/imgui_impl_opengl3.h"
+    "imgui/backends/imgui_impl_opengl3.cpp")
+target_include_directories(impl PUBLIC "imgui/backends/")
 target_link_libraries(impl PUBLIC
     imgui
     implot
