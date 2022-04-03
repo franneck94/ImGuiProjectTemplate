@@ -1,18 +1,17 @@
-add_executable(${EXE_NAME}
-        app/imgui_impl_glfw.h
-        app/imgui_impl_glfw.cpp
-        app/imgui_impl_opengl3.h
-        app/imgui_impl_opengl3.cpp
-        app/main.cpp)
+set(EXE_SOURCES "main.cpp" "cycle.cpp")
+add_executable(main ${EXE_SOURCES})
 
-target_link_libraries(${EXECUTABLE_NAME} PUBLIC
-    ${LIBRARY_NAME}
+target_link_libraries(main PUBLIC
+    lib
     fmt::fmt
     spdlog::spdlog_header_only
     nlohmann_json
-    ${CONAN_CXXOPTS}
+    cxxopts::cxxopts
+    impl
+    imgui
+    implot
 )
 
 if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET ${LIBRARY_NAME} ENABLE ON AS_ERROR OFF)
+    target_set_warnings(TARGET lib ENABLE ON AS_ERROR OFF)
 endif()

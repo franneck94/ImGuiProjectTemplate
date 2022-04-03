@@ -8,9 +8,7 @@ This is a template for Imgui C++ projects. What you get:
 - Library, executable and test code separated in distinct folders.
 - Use of modern CMake for building and compiling.
 - External libraries fetched by CMake or cloned by Git.
-- External libraries installed and managed by [Conan](https://conan.io/).
 - General purpose libraries: [JSON](https://github.com/nlohmann/json), [spdlog](https://github.com/gabime/spdlog), [cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt).
-- Code documentation with [Doxygen](http://www.stack.nl/~dimitri/doxygen/).
 
 ## Structure
 
@@ -21,9 +19,6 @@ This is a template for Imgui C++ projects. What you get:
 │   └── main.cc
 ├── cmake
 │   └── cmake modules
-├── docs
-│   ├── Doxyfile
-│   └── html/
 ├── external
 │   ├── CMakesLists.txt
 │   └── ...
@@ -40,10 +35,7 @@ Library code goes into [src/](src/), main program code in [app/](app).
 
 - CMake 3.16+
 - GNU Makefile
-- Doxygen
-- Conan or VCPKG
 - MSVC 2017 (or higher), G++9 (or higher), Clang++9 (or higher)
-- Code Coverage (only on GNU|Clang): lcov, gcovr
 
 ## Building
 
@@ -63,12 +55,4 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 cmake --build . --config Release --target main
 cd bin
 ./main
-```
-
-- Documentation
-
-```shell
-cd build
-cmake -DCMAKE_BUILD_TYPE=Debug ..
-cmake --build . --config Debug --target docs
 ```

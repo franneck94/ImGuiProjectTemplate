@@ -15,16 +15,11 @@ option(ENABLE_CPPCHECK      "Enable to add cppcheck."               OFF)
 option(ENABLE_LTO           "Enable to add Link Time Optimization." OFF)
 option(ENABLE_CCACHE        "Enable to add Ccache."                 OFF)
 
-# Project/Library Names
-set(LIBRARY_NAME    "lib")
-set(EXECUTABLE_NAME "main")
-
 ### CMAKE MODULES
 
 set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/cmake/)
 include(ConfigSafeGuards)
 include(Warnings)
-include(Docs)
 include(AddGitSubmodule)
 include(FetchContent)
 
@@ -38,11 +33,16 @@ endif()
 
 ### EXTERNAL LIBRARIES
 
-add_git_submodule(external/json)
 add_git_submodule(external/glfw)
 add_git_submodule(external/glad)
-add_git_submodule(external/imgui)
-add_git_submodule(external/implot)
+add_git_submodule(external/json)
+
+FetchContent_Declare(
+    cxxopts
+    GIT_REPOSITORY https://github.com/jarro2783/cxxopts.git
+    GIT_TAG v3.0.0
+    GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(cxxopts)
 
 FetchContent_Declare(
     fmt
@@ -58,24 +58,9 @@ FetchContent_Declare(
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(spdlog)
 
-include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-conan_basic_setup()
-
 ### SUB DIRECTORIES
 
 add_subdirectory(configured)
 add_subdirectory(external)
 add_subdirectory(src)
 add_subdirectory(app)
-
-### INSTALL TARGETS
-
-install(TARGETS ${EXECUTABLE_NAME}
-        EXPORT ${LIBRARY_NAME}
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib
-        RUNTIME DESTINATION bin)
-
-install(TARGETS ${LIBRARY_NAME}
-        ARCHIVE DESTINATION lib
-        LIBRARY DESTINATION lib)
