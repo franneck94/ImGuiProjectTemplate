@@ -1,15 +1,8 @@
-#include <chrono>
-#include <filesystem>
-#include <iostream>
-#include <string>
-#include <string_view>
-#include <thread>
-
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 #include "imgui_impl_opengl3_loader.h"
-#include <stdio.h>
+
 #if defined(IMGUI_IMPL_OPENGL_ES2)
 #include <GLES2/gl2.h>
 #endif
@@ -26,7 +19,7 @@ namespace fs = std::filesystem;
 
 static void glfw_error_callback(int error, const char *description);
 
-int main(int argc, char **argv)
+int main(int , char **)
 {
     // Setup window
     glfwSetErrorCallback(glfw_error_callback);
@@ -57,12 +50,12 @@ int main(int argc, char **argv)
 #endif
 
     // Create window with graphics context
-    GLFWwindow *window = glfwCreateWindow(static_cast<std::int32_t>(1280),
-                                          static_cast<std::int32_t>(720),
-                                          "Gui",
-                                          NULL,
-                                          NULL);
-    if (window == NULL)
+    GLFWwindow *window = glfwCreateWindow(static_cast<std::int32_t>(WINDOW_WIDTH),
+        static_cast<std::int32_t>(WINDOW_HEIGHT),
+        "Gui",
+        nullptr,
+        nullptr);
+    if (window == nullptr)
     {
         return 1;
     }

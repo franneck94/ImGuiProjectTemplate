@@ -8,7 +8,7 @@ Checks: '-*,
          -cppcoreguidelines-pro-type-vararg,
          -modernize-use-trailing-return-type,
          -bugprone-exception-escape'
-HeaderFilterRegex: 'src/*,app/*'
+HeaderFilterRegex: 'src/.*'
 AnalyzeTemporaryDtors: false
 WarningsAsErrors: ''
 ...
