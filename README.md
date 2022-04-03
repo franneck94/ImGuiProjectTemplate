@@ -26,11 +26,11 @@ This is a template for Imgui C++ projects. What you get:
 │   └── html/
 ├── external
 │   ├── CMakesLists.txt
-│   ├── ...
-├── src
-│   ├── CMakesLists.txt
-│   ├── my_lib.h
-     └── my_lib.cc
+│   └── ...
+└── src
+    ├── CMakesLists.txt
+    ├── my_lib.h
+    └── my_lib.cc
    
 ```
 
