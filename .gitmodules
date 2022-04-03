@@ -1,6 +1,6 @@
 [submodule "external/json"]
 	path = external/json
-	url = https://github.com/nlohmann/json.git
+	url = https://github.com/nlohmann/json
 [submodule "external/glad"]
 	path = external/glad
 	url = https://github.com/Dav1dde/glad
@@ -10,3 +10,6 @@
 [submodule "external/imgui"]
 	path = external/imgui
 	url = https://github.com/ocornut/imgui
+[submodule "external/implot"]
+	path = external/implot
+	url = https://github.com/epezent/implot
