@@ -7,6 +7,7 @@ void render()
 {
     ImGui::NewFrame();
 
+    int i = 1;
     ImGui::Button("TEST");
 
     ImGui::Render();

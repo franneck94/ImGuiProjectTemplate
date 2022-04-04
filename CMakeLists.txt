@@ -11,7 +11,6 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS   ON)
 # Options
 option(ENABLE_WARNINGS      "Enable to add warnings to a target."   ON)
 option(ENABLE_CLANG_TIDY    "Enable to add clang tidy."             OFF)
-option(ENABLE_CPPCHECK      "Enable to add cppcheck."               OFF)
 option(ENABLE_LTO           "Enable to add Link Time Optimization." OFF)
 option(ENABLE_CCACHE        "Enable to add Ccache."                 OFF)
 
@@ -55,10 +54,17 @@ FetchContent_MakeAvailable(fmt)
 
 FetchContent_Declare(
     spdlog
-    GIT_REPOSITORY https://github.com/gabime/spdlog
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
     GIT_TAG v1.9.2
     GIT_SHALLOW TRUE)
 FetchContent_MakeAvailable(spdlog)
+
+FetchContent_Declare(
+    range-v3
+    GIT_REPOSITORY https://github.com/ericniebler/range-v3.git
+    GIT_TAG 0.11.0
+    GIT_SHALLOW TRUE)
+FetchContent_MakeAvailable(range-v3)
 
 ### SUB DIRECTORIES
 
