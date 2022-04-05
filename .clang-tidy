@@ -1,14 +1,14 @@
 ---
-Checks: '-*,
-         clang-*,
-         bugprone-*,
-         cppcoreguidelines-*,
-         modernize-*,
-         performance-*,
-         -cppcoreguidelines-pro-type-vararg,
-         -modernize-use-trailing-return-type,
-         -bugprone-exception-escape'
-HeaderFilterRegex: 'src/*.(h|hpp|hh|cc|cpp)$'
+Checks: '
+clang-analyzer-*,
+clang-cppcoreguidelines-*,
+clang-modernize-*,
+-cppcoreguidelines-avoid-magic-numbers,
+-cppcoreguidelines-macro-usage,
+-cppcoreguidelines-owning-memory
+'
+WarningsAsErrors: '*'
+HeaderFilterRegex: '.*'
 AnalyzeTemporaryDtors: false
-WarningsAsErrors: ''
+FormatStyle:     none
 ...
