@@ -45,16 +45,14 @@ First, clone this repo and do the preliminary work:
 
 ```shell
 git clone --recursive https://github.com/franneck94/ImGuiProjectTemplate.git
-make prepare
 ```
 
-- App Executable:
-The build type can be Debug/Release/MinSizeRel or RelWithDebInfo
+- App Executable
 
 ```shell
 cd build
-cmake -DCMAKE_BUILD_TYPE=Release ..
-cmake --build . --config Release --target main
+cmake  ..
+cmake --build . --target main
 cd bin
 ./main
 ```

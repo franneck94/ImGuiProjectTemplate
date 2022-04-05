@@ -1,4 +1,4 @@
-### SIMPLEINI LIB
+### SIMPLEINI
 set(SIMPLE_INI_SOURCES
     "simpleini/ConvertUTF.c")
 add_library(simple_ini STATIC ${SIMPLE_INI_SOURCES})
@@ -7,7 +7,7 @@ if (${ENABLE_WARNINGS})
     target_set_warnings(TARGET simple_ini ENABLE OFF AS_ERROR OFF)
 endif()
 
-### IMGUI LIB
+### IMGUI
 set(IMGUI_SOURCES
     "imgui/imgui.cpp"
     "imgui/imgui_draw.cpp"
@@ -19,7 +19,7 @@ if (${ENABLE_WARNINGS})
     target_set_warnings(TARGET imgui ENABLE OFF AS_ERROR OFF)
 endif()
 
-### GLFW LIB
+### GLFW
 set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "Build the GLFW example programs")
 set(GLFW_BUILD_TESTS OFF CACHE INTERNAL "Build the GLFW test programs")
 set(GLFW_BUILD_DOCS OFF CACHE INTERNAL "Build the GLFW documentation")
@@ -30,7 +30,7 @@ if (${ENABLE_WARNINGS})
     target_set_warnings(TARGET glfw ENABLE OFF AS_ERROR OFF)
 endif()
 
-### IMPLOT LIB
+### IMPLOT
 set(IMPLOT_SOURCES
     "implot/implot_items.cpp"
     "implot/implot.cpp")
