@@ -13,7 +13,6 @@ target_include_directories(lib PUBLIC
     ${LIBRARY_INCLUDES})
 target_link_libraries(lib PRIVATE
     impl
-    simple_ini
     fmt::fmt
     range-v3
     spdlog::spdlog_header_only)

@@ -1,12 +1,3 @@
-### SIMPLEINI
-set(SIMPLE_INI_SOURCES
-    "simpleini/ConvertUTF.c")
-add_library(simple_ini STATIC ${SIMPLE_INI_SOURCES})
-target_include_directories(simple_ini PUBLIC "simpleini")
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET simple_ini ENABLE OFF AS_ERROR OFF)
-endif()
-
 ### IMGUI
 set(IMGUI_SOURCES
     "imgui/imgui.cpp"
