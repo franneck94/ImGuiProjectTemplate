@@ -50,7 +50,7 @@ int main(int , char **)
 #endif
 
     // Create window with graphics context
-    GLFWwindow *window = glfwCreateWindow(static_cast<std::int32_t>(WINDOW_WIDTH),
+    auto *window = glfwCreateWindow(static_cast<std::int32_t>(WINDOW_WIDTH),
         static_cast<std::int32_t>(WINDOW_HEIGHT),
         "Gui",
         nullptr,
@@ -65,15 +65,13 @@ int main(int , char **)
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
-    ImGuiIO &io = ImGui::GetIO();
-    (void)io;
     ImGui::StyleColorsDark();
 
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    ImGuiStyle &style = ImGui::GetStyle();
+    auto &style = ImGui::GetStyle();
     style.Colors[ImGuiCol_TableBorderStrong] = ImVec4(1.0, 1.0, 1.0, 1.0);
     style.Colors[ImGuiCol_TableBorderLight] = ImVec4(1.0, 1.0, 1.0, 1.0);
 
