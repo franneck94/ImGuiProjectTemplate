@@ -14,7 +14,7 @@ target_link_libraries(${EXECUTABLE_NAME} PRIVATE
     cxxopts::cxxopts
     nlohmann_json::nlohmann_json)
 
-target_set_warnings(TARGET ${EXECUTABLE_NAME} ENABLE ${ENABLE_WARNINGS} AS_ERROR ${ENABLE_WARNINGS_AS_ERRORS})
+target_set_warnings(TARGET ${EXECUTABLE_NAME} ENABLE ${ENABLE_WARNINGS} AS_ERRORS ${ENABLE_WARNINGS_AS_ERRORS})
 
 if(${ENABLE_LTO})
     target_enable_lto(${EXECUTABLE_NAME} optimized)
