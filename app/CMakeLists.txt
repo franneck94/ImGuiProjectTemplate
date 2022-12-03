@@ -1,26 +1,21 @@
 set(EXE_SOURCES
-    "main.cpp"
+    "${EXECUTABLE_NAME}.cpp"
     "cycle.cpp")
 set(EXE_HEADERS
     "cycle.hpp")
-add_executable(main
+add_executable(${EXECUTABLE_NAME}
     ${EXE_SOURCES}
     ${EXE_HEADERS})
 
-target_link_libraries(main PRIVATE
+target_link_libraries(${EXECUTABLE_NAME} PRIVATE
     impl
-    lib
-    nlohmann_json
+    ${LIBRARY_NAME}
     fmt::fmt
-    range-v3
-    spdlog::spdlog_header_only
     cxxopts::cxxopts
-)
+    nlohmann_json::nlohmann_json)
 
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET main ENABLE ON AS_ERROR OFF)
-endif()
+target_set_warnings(TARGET ${EXECUTABLE_NAME} ENABLE ${ENABLE_WARNINGS} AS_ERROR ${ENABLE_WARNINGS_AS_ERRORS})
 
 if(${ENABLE_LTO})
-    target_enable_lto(main optimized)
+    target_enable_lto(${EXECUTABLE_NAME} optimized)
 endif()

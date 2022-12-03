@@ -11,7 +11,7 @@ This is a template for Imgui C++ projects. What you get:
   - All graphical and imgui related libs via Git submodules:
     - GLFW, Imgui and Implot
   - General purpose libraries via CMake FetchContent:
-    - [JSON](https://github.com/nlohmann/json), [spdlog](https://github.com/gabime/spdlog) ,[cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt)
+    - [JSON](https://github.com/nlohmann/json), [cxxopts](https://github.com/jarro2783/cxxopts) and [fmt](https://github.com/fmtlib/fmt)
 
 ## Structure
 
@@ -29,7 +29,6 @@ This is a template for Imgui C++ projects. What you get:
     ├── CMakesLists.txt
     ├── my_lib.h
     └── my_lib.cc
-   
 ```
 
 Library code goes into [src/](src/), main program code in [app/](app).

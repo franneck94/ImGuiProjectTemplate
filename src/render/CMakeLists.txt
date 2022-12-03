@@ -6,21 +6,19 @@ set(LIBRARY_INCLUDES
     "./"
     "${CMAKE_BINARY_DIR}/configured_files/include")
 
-add_library(lib STATIC
+add_library(${LIBRARY_NAME} STATIC
     ${LIBRARY_SOURCES}
     ${LIBRARY_HEADERS})
-target_include_directories(lib PUBLIC
+target_include_directories(${LIBRARY_NAME} PUBLIC
     ${LIBRARY_INCLUDES})
-target_link_libraries(lib PRIVATE
+target_link_libraries(${LIBRARY_NAME} PRIVATE
     impl
     fmt::fmt
-    range-v3
-    spdlog::spdlog_header_only)
+    cxxopts::cxxopts
+    nlohmann_json::nlohmann_json)
 
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET lib ENABLE ON AS_ERROR OFF)
-endif()
+target_set_warnings(TARGET ${LIBRARY_NAME} ENABLE ${ENABLE_WARNINGS} AS_ERROR ${ENABLE_WARNINGS_AS_ERRORS})
 
 if(${ENABLE_LTO})
-    target_enable_lto(lib optimized)
+    target_enable_lto(${LIBRARY_NAME} optimized)
 endif()

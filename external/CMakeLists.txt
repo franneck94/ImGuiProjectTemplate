@@ -6,9 +6,6 @@ set(IMGUI_SOURCES
     "imgui/imgui_widgets.cpp")
 add_library(imgui STATIC ${IMGUI_SOURCES})
 target_include_directories(imgui PUBLIC "imgui")
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET imgui ENABLE OFF AS_ERROR OFF)
-endif()
 
 ### GLFW
 set(GLFW_BUILD_EXAMPLES OFF CACHE INTERNAL "Build the GLFW example programs")
@@ -17,9 +14,6 @@ set(GLFW_BUILD_DOCS OFF CACHE INTERNAL "Build the GLFW documentation")
 set(GLFW_INSTALL OFF CACHE INTERNAL "Generate installation target")
 add_subdirectory("glfw")
 target_link_libraries(glfw PUBLIC imgui)
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET glfw ENABLE OFF AS_ERROR OFF)
-endif()
 
 ### IMPLOT
 set(IMPLOT_SOURCES
@@ -28,9 +22,6 @@ set(IMPLOT_SOURCES
 add_library(implot STATIC ${IMPLOT_SOURCES})
 target_include_directories(implot PUBLIC "implot")
 target_link_libraries(implot PUBLIC imgui)
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET implot ENABLE OFF AS_ERROR OFF)
-endif()
 
 ### ALL GRAPHICAL LIBS
 set(IMPL_SOURCES
@@ -44,9 +35,6 @@ target_link_libraries(impl PUBLIC
     imgui
     implot
     glfw)
-if (${ENABLE_WARNINGS})
-    target_set_warnings(TARGET impl ENABLE OFF AS_ERROR OFF)
-endif()
 
 if(${ENABLE_LTO})
     target_enable_lto(impl optimized)
