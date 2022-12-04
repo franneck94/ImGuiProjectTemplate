@@ -8,10 +8,11 @@
 #endif
 #include <GLFW/glfw3.h>
 
-#include "render.hpp"
 #include "cycle.hpp"
+#include "render.hpp"
 
-#if defined(_MSC_VER) && (_MSC_VER >= 1900) && !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
+#if defined(_MSC_VER) && (_MSC_VER >= 1900) &&                                 \
+    !defined(IMGUI_DISABLE_WIN32_FUNCTIONS)
 #pragma comment(lib, "legacy_stdio_definitions")
 #endif
 
@@ -19,7 +20,7 @@ namespace fs = std::filesystem;
 
 static void glfw_error_callback(int error, const char *description);
 
-int main(int , char **)
+int main(int, char **)
 {
     // Setup window
     glfwSetErrorCallback(glfw_error_callback);
@@ -51,10 +52,10 @@ int main(int , char **)
 
     // Create window with graphics context
     auto *window = glfwCreateWindow(static_cast<std::int32_t>(WINDOW_WIDTH),
-        static_cast<std::int32_t>(WINDOW_HEIGHT),
-        "Gui",
-        nullptr,
-        nullptr);
+                                    static_cast<std::int32_t>(WINDOW_HEIGHT),
+                                    "Gui",
+                                    nullptr,
+                                    nullptr);
     if (window == nullptr)
     {
         return 1;
