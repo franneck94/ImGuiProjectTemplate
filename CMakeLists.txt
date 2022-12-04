@@ -6,10 +6,10 @@ project(
     LANGUAGES C CXX)
 
 # Global CMake variables are set here
-set(CMAKE_CXX_STANDARD              17)
-set(CMAKE_CXX_STANDARD_REQUIRED     ON)
-set(CMAKE_CXX_EXTENSIONS            OFF)
-set(CMAKE_EXPORT_COMPILE_COMMANDS   ON)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Options
 option(ENABLE_WARNINGS "Enable to add warnings to a target." ON)
@@ -43,7 +43,7 @@ include(ConfigSafeGuards)
 add_cmake_format_target()
 add_clang_format_target()
 
-if (ENABLE_LTO)
+if(ENABLE_LTO)
     find_lto(CXX)
 endif()
 
