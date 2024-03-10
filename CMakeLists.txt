@@ -54,23 +54,22 @@ endif()
 
 # EXTERNAL LIBRARIES
 
-message(STATUS "Using VCPKG")
-include(
-    ${CMAKE_SOURCE_DIR}/external/vcpkg/scripts/buildsystems/vcpkg.cmake)
-find_package(nlohmann_json REQUIRED)
-find_package(fmt REQUIRED)
-find_package(spdlog REQUIRED)
-find_package(cxxopts REQUIRED)
-if(ENABLE_TESTING)
-    find_package(Catch2 REQUIRED)
-    list(APPEND CMAKE_MODULE_PATH ${Catch2_SOURCE_DIR}/extras)
-endif()
+# set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/external/vcpkg)
+# you can set any other vcpkg installation on your system
+set (VCPKG_DIR ${CMAKE_SOURCE_DIR}/external/vcpkg)
+include(${VCPKG_DIR}/scripts/buildsystems/vcpkg.cmake)
 
+find_package(fmt CONFIG REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+find_package(imgui CONFIG REQUIRED)
+find_package(implot CONFIG REQUIRED)
+find_package(OpenGL REQUIRED)
 
 add_subdirectory(configured)
 add_subdirectory(external)
 add_subdirectory(src)
 add_subdirectory(app)
+
 # INSTALL TARGETS
 
 install(

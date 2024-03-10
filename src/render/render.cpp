@@ -7,4 +7,9 @@
 
 void render()
 {
+    if (ImGui::Begin("Main"))
+    {
+        ImGui::Text("Hello World!");
+        ImGui::End();
+    }
 }
