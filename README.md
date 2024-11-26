@@ -54,7 +54,7 @@ Library code goes into [src/](src/), main program code in [app/](app).
 First, clone this repo and do the preliminary work:
 
 ```shell
-git clone --recursive https://github.com/franneck94/CppProjectTemplate
+git clone --recursive https://github.com/franneck94/ImGuiProjectTemplate
 mkdir build
 ```
 
