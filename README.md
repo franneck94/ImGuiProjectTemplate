@@ -58,6 +58,12 @@ git clone --recursive https://github.com/franneck94/ImGuiProjectTemplate
 mkdir build
 ```
 
+Linux only: install libraries required by submodule vcpkg:
+
+```shell
+sudo apt install libxinerama-dev libxcursor-dev xorg-dev libglu1-mesa-dev pkg-config
+```
+
 - App Executable
 
 ```shell
